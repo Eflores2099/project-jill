@@ -5,7 +5,7 @@ const Post = required('../models/post.js')
 // Get all posts -sorted by time = /public/
 publicRouter.get("/", async (req, res,  next) => {
     try {
-        const posts =await Post.find().sort({timeStamp: -1})
+        const posts = await Post.find().sort({timeStamp: -1})
         return res.status(200).send(posts)
     }
     catch(err){

@@ -1,12 +1,12 @@
 import express from 'express';
-const adminRouter = express.Router()
-constjwt = require('jsonwebtoken')
-const Admin = require('../models/user.js')
+const authRouter = express.Router()
+const jwt = require('jsonwebtoken')
+const User = require('../models/user.js')
 
 
 // Admin--POST- signup
-authRouter.post('/admin', (req, res, next) => {
-    Admin.findOne({username: req.body.username.toLowerCase()}, (err, user) => {
+authRouter.post('/signup', (req, res, next) => {
+    User.findOne({username: req.body.username.toLowerCase()}, (err, user) => {
         if(err){
             res.status(500)
             return next(err)
@@ -16,7 +16,7 @@ authRouter.post('/admin', (req, res, next) => {
             return next(new Error("That username already exists"))
         }
         // Create user
-        const newUser = User(req.body)
+        const newUser =  new User(req.body)
         // pre-save hook fires, encrypts password, and then the .save() is executed
         newUser.save((err, savedUser) => {
             if(err){
@@ -63,4 +63,4 @@ authRouter.post("/login", (req, res, next) => {
     })
 })
 
-module.exports = adminRouter
+module.exports = authRouter

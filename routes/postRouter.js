@@ -1,6 +1,6 @@
-import express from 'express';
+const express= require('express');
 const postRouter = express.Router()
-const Post = require('../models/post.js')
+// const Post = require('../models/post.js')
 
 // post -add new post- /api/post
 postRouter.post("/", (req, res, next) => {

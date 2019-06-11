@@ -1,7 +1,7 @@
-import express from 'express';
+const express = require('express');
 const authRouter = express.Router()
 const jwt = require('jsonwebtoken')
-const User = require('../models/user.js')
+// const User = require('../models/user.js')
 
 
 // Admin--POST- signup

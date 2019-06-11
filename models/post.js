@@ -14,12 +14,12 @@ const postSchema = new Schema({
     timeStamp: {
         type: Date,
         default: Date.now
-    },
-    admin: {
-        type: String.Types.ObjectId,
-        ref: "Admin",
-        required:true
     }
+    // admin: {
+    //     type: String.Types.ObjectId,
+    //     ref: "Admin",
+    //     required:true
+    // }
 })
 
 module.exports = mongoose.model("Post", postSchema)

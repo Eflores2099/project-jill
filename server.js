@@ -16,7 +16,7 @@ app.use("/api", expressJwt({secret: process.env.SECRET}))
 
 // my Database Connect to Mongoose
 mongoose.connect('mongodb://localhost:27017/home', {useNewUrlParser: true}, () => {
-    console.log('[+] Connected to the Database')
+    console.log('[o] Connected to the Database')
 })
 
 // My Routes

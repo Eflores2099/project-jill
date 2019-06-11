@@ -1,6 +1,6 @@
-import express from 'express';
+const express= require('express');
 const publicRouter = express.Router()
-const Post = require('../models/post.js')
+// const Post = require('../models/post.js')
 
 // Get all posts -sorted by time = /public/
 publicRouter.get("/", async (req, res,  next) => {
